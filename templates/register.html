@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — Create Account</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-hero">
+      <div class="hero-eyebrow">EXPENSE LEDGER</div>
+      <h1 class="hero-title">Start your <em>ledger</em> today.</h1>
+      <p class="hero-copy">Takes less than a minute. No spreadsheets, no clutter — just a clean record of your spending.</p>
+      <div class="hero-ledger">
+        <div class="hero-stat">
+          <div class="num">100%</div>
+          <div class="label">Yours, privately kept</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">&lt;1min</div>
+          <div class="label">To set up</div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-panel">
+      <div class="auth-card">
+        <h2>Create your account</h2>
+        <p class="auth-sub">Set up your ledger in a few seconds.</p>
+        <div id="formMsg" class="form-msg"></div>
+        <form id="registerForm">
+          <div class="field">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="new-password" minlength="6" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Create account</button>
+        </form>
+        <div class="auth-switch">
+          Already have an account? <a href="{{ url_for('login_page') }}">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>

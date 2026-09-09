@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — Sign In</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-hero">
+      <div class="hero-eyebrow">EXPENSE LEDGER</div>
+      <h1 class="hero-title">Every rupee, <em>accounted for.</em></h1>
+      <p class="hero-copy">A quiet place to log what you spend, see where it goes, and close the month with a clear head.</p>
+      <div class="hero-ledger">
+        <div class="hero-stat">
+          <div class="num">₹0.00</div>
+          <div class="label">Starting balance today</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">9</div>
+          <div class="label">Spending categories</div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-panel">
+      <div class="auth-card">
+        <h2>Welcome back</h2>
+        <p class="auth-sub">Sign in to see your ledger.</p>
+        <div id="formMsg" class="form-msg"></div>
+        <form id="loginForm">
+          <div class="field">
+            <label for="identifier">Username or email</label>
+            <input type="text" id="identifier" name="identifier" autocomplete="username" required>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+        <div class="auth-switch">
+          New here? <a href="{{ url_for('register_page') }}">Create an account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>
